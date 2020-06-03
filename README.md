@@ -1,6 +1,9 @@
 KV Le
+
 CSE 163: Intermediate Data Programming
+
 Professor: Hunter Schafer
+
 Project Mentor: Trinh Nguyen
 
 # An Analysis of Anime and Anime Consumers Based on MyAnimeList (MAL)
