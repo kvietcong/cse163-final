@@ -1,12 +1,12 @@
-KV Le
+# An Analysis of Anime and Anime Consumers Based on MyAnimeList (MAL)
+
+Report by KV Le
 
 CSE 163: Intermediate Data Programming
 
 Professor: Hunter Schafer
 
 Project Mentor: Trinh Nguyen
-
-# An Analysis of Anime and Anime Consumers Based on MyAnimeList (MAL)
 
 The following contents of this file will be the instructions on how to use the code written for my CSE163 Final Project about MAL users. The full report can be found within this directory named "report.pdf"
 
@@ -36,12 +36,13 @@ You will need to have the following Original Data:
 > **Note:** All original Data retrieved from https://www.kaggle.com/azathoth42/myanimelist was renamed to match the files above and put into a new directories
 
 ## Steps for Result Reproduction
-1. Make sure there are the proper files and the correct folder structure
+1. Retrieve original data. Refer to the "Required Data" and retrieve the cleaned sets from https://www.kaggle.com/azathoth42/myanimelist. Download, rename, and relocate the cleaned data in to the proper folders.
+2. Make sure there are the proper files and the correct folder structure
     ```
     Main Directory
     │   data_analyzing.py
-    |   data_retrieve_cleaning.py
-    |   ...
+    │   data_retrieve_cleaning.py
+    │   ...
     │
     └───data
     │   │
@@ -56,9 +57,9 @@ You will need to have the following Original Data:
         │
         └───rq3_genres
     ```
-2. Run data_retrieve_cleaning.py to filter out uneeded details and retrieve more data.
+3. Run data_retrieve_cleaning.py to filter out uneeded details and retrieve more data.
     - This will take a long time due to needing to retrieve hundreds of anime from 2019 on an API that rate limits
-3. Run data_analyze.py to generate all necessary data analysis and visualizations
+4. Run data_analyze.py to generate all necessary data analysis and visualizations
     - In the rq_one.py file, please read the function comments within "plot_gender_genres" to see if you must create a new pickle
     - The first run through will be pretty long due to rq_one.py. You can comment out lines in data_analyzing.py to fit your needs
-4. Hopefully Enjoy the Results!
+5. Hopefully Enjoy the Results!
