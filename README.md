@@ -37,6 +37,8 @@ You will need to have the following Original Data:
 
 ## Steps for Result Reproduction
 1. Retrieve original data. Refer to the "Required Data" and retrieve the cleaned sets from https://www.kaggle.com/azathoth42/myanimelist. Download, rename, and relocate the cleaned data in to the proper folders.
+
+    > **Note:** If you want a premade data folder without any renaming or processing, download it at https://drive.google.com/drive/folders/1-HOV_2Xe9E9mNgtxm6sE6K0pD750JebP?usp=sharing
 2. Make sure there are the proper files and the correct folder structure
     ```
     Main Directory
