@@ -15,8 +15,9 @@ import matplotlib.pyplot as plt
 from sklearn.tree import DecisionTreeRegressor, export_graphviz
 from sklearn.metrics import mean_squared_error, mean_absolute_error
 sns.set()
-# The line below makes it so graphviz works
-os.environ["PATH"] += os.pathsep + 'D:/Program Files/Graphviz2.38/bin/'
+# The line below makes it so graphviz works. Please Redirect path if your
+# GraphViz files are elsewhere
+os.environ["PATH"] += os.pathsep + "D:/Program Files/Graphviz2.38/bin/"
 
 
 def get_features(data, feature_removed=None):

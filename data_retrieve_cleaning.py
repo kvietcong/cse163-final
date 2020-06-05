@@ -1,3 +1,12 @@
+"""
+KV Le
+CSE 163 AG
+Final Project
+
+A script that retrieves and cleans the data needed for my Final Project about
+MyAnimeList Users
+"""
+
 import pandas as pd
 from jikanpy import Jikan
 from time import sleep
