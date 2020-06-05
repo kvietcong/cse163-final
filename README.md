@@ -63,6 +63,7 @@ You will need to have the following Original Data:
     ```
 3. Run data_retrieve_cleaning.py to filter out uneeded details and retrieve more data.
     - This will take a long time due to needing to retrieve hundreds of anime from 2019 on an API that rate limits
+    - If the my cleaned versions are already in data, there is no need to run this step
 4. Run data_analyze.py to generate all necessary data analysis and visualizations
     - In the rq_one.py file, please read the function comments within "plot_gender_genres" to see if you must create a new pickle
     - The first run through will be pretty long due to rq_one.py. You can comment out lines in data_analyzing.py to fit your needs
