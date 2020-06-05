@@ -8,7 +8,7 @@ Professor: Hunter Schafer
 
 Project Mentor: Trinh Nguyen
 
-The following contents of this file will be the instructions on how to use the code written for my CSE163 Final Project about MAL users. The full report can be found within this directory named "report.pdf"
+The following contents of this file will be the instructions on how to use the code written for my CSE163 Final Project about MAL users. The full report can be found within this directory named "report.pdf" or at https://docs.google.com/document/d/1524UoFh8ioQ3Oac32oNhEHeTNDgBaA2aY6HEIIyLods
 
 > **Note:** If you happen to only have this README or are missing files, you can get all the required files at https://github.com/derpyasianpanda/cse163-final
 
@@ -35,10 +35,12 @@ You will need to have the following Original Data:
 
 > **Note:** All original Data retrieved from https://www.kaggle.com/azathoth42/myanimelist was renamed to match the files above and put into a new directories
 
+> **Note:** All 2019 Anime Data is retrieved for you in data_retrieve_cleaning.py
+
 ## Steps for Result Reproduction
 1. Retrieve original data. Refer to the "Required Data" and retrieve the cleaned sets from https://www.kaggle.com/azathoth42/myanimelist. Download, rename, and relocate the cleaned data in to the proper folders.
 
-    > **Note:** If you want a premade data folder without any renaming or processing, download it at https://drive.google.com/drive/folders/1-HOV_2Xe9E9mNgtxm6sE6K0pD750JebP?usp=sharing
+    > **Note:** If you want a premade data folder without any renaming or processing, download it at https://drive.google.com/drive/folders/1-HOV_2Xe9E9mNgtxm6sE6K0pD750JebP
 2. Make sure there are the proper files and the correct folder structure
     ```
     Main Directory
@@ -65,3 +67,7 @@ You will need to have the following Original Data:
     - In the rq_one.py file, please read the function comments within "plot_gender_genres" to see if you must create a new pickle
     - The first run through will be pretty long due to rq_one.py. You can comment out lines in data_analyzing.py to fit your needs
 5. Hopefully Enjoy the Results!
+
+> **Note:** For basic tests, just run tests.py
+
+# Thanks for taking the time reading about my first Data Science Project

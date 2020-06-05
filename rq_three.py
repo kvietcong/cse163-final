@@ -7,6 +7,7 @@ A script that has multiple functions that manipulate/visualize data about
 My Anime List to answer my third research question for my final project.
 """
 
+import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
 sns.set()
@@ -173,6 +174,89 @@ def plot_genre_average(data, top_n=5, genres=None):
         plt.close(fig)
 
 
+def plot_studio_amounts(data, name="studio_amounts"):
+    """Plots the amount of anime made by each studio
+
+    Parameters
+    ----------
+    data : DataFrame
+        Pandas DataFrame that contains anime show data
+    name : String
+        Determines name of the file
+
+    Notes
+    -----
+    Visualization Type: Bar Plot
+    File Path: plots/rq3_{name}.png
+    """
+
+    studios = data["studio"].str.split(", ", expand=True).stack() \
+        .str.get_dummies().sum().sort_values(ascending=False).iloc[0:50]
+
+    fig, ax = plt.subplots()
+    fig.set_size_inches(15, 10)
+    fig.suptitle("Amount of Animes made by Studios")
+
+    sns.barplot(x=studios.index, y=studios.values, ax=ax)
+    ax.set_xlabel("Studios")
+    ax.set_ylabel("Amount of Anime")
+    plt.xticks(rotation=45, ha="right")
+    fig.savefig(f"plots/rq3_{name}.png", bbox_inches="tight")
+    plt.close(fig)
+
+
+def plot_studio_count_yearly(data, top_n=10):
+    """Plots the yearly count of the top_n studios
+
+    Parameters
+    ----------
+    data : DataFrame
+        Pandas DataFrame that contains anime show data
+    top_n : Integer
+        Determines how many studios that will be placed onto the graph
+
+    Notes
+    -----
+    Visualization Type: Line Plot
+    File Path: plots/rq3_studios_yearly.png
+    If the top_n value goes over the length of "distinct_colors", the palette
+        will be shifted back to the default, which has indistinct colors
+    Top_n is determined by the overall amount of anime made with the studio
+    """
+
+    yearly = data[["studio", "aired_from_year"]]
+    # The line below prevents 2018 b/c the data was scraped during that year,
+    # therefore incomplete
+    yearly = data[data["aired_from_year"] < 2018]
+    yearly = pd.concat([yearly["aired_from_year"],
+                        pd.get_dummies(yearly["studio"]
+                        .str.split(", ", expand=True),
+                        prefix="", prefix_sep="")], axis=1)
+    yearly = yearly.groupby("aired_from_year").sum() \
+        .groupby(level=0, axis=1).sum().reset_index()
+
+    top_studios = data["studio"].str.split(", ", expand=True).stack() \
+        .str.get_dummies().sum().sort_values(ascending=False) \
+        .iloc[:top_n]
+    yearly = \
+        yearly.loc[:, yearly.columns.isin(list(top_studios.index)
+                                          + ["aired_from_year"])]
+
+    palette = distinct_colors[:top_n] if top_n < len(distinct_colors) else None
+
+    fig, ax = plt.subplots()
+    fig.set_size_inches(15, 8)
+    sns.lineplot(x="aired_from_year", y="value", hue="Studio",
+                 data=pd.melt(yearly, ["aired_from_year"])
+                 .rename(columns={"variable": "Studio"}),
+                 palette=palette, ax=ax)
+    fig.suptitle(f"Top {top_n} Studios by Year (Anime Counts)")
+    ax.set_xlabel("Year")
+    ax.set_ylabel("Amount of Anime")
+    ax.legend(bbox_to_anchor=(1.05, 1), loc=2, borderaxespad=0)
+    fig.savefig("plots/rq3_studios_yearly.png", bbox_inches="tight")
+
+
 def main(anime_data):
     """
     Runs all the data analysis and visualization for research question three
@@ -188,3 +272,5 @@ def main(anime_data):
     plot_studio_averages(anime_data)
     plot_genre_average(anime_data)
     plot_genre_average(anime_data, genres=["Comedy", "Romance", "Action"])
+    plot_studio_amounts(anime_data)
+    plot_studio_count_yearly(anime_data)
