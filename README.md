@@ -10,6 +10,8 @@ Project Mentor: Trinh Nguyen
 
 The following contents of this file will be the instructions on how to use the code written for my CSE163 Final Project about MAL users. The full report can be found within this directory named "report.pdf" or at https://docs.google.com/document/d/1524UoFh8ioQ3Oac32oNhEHeTNDgBaA2aY6HEIIyLods
 
+My presentation on the subject can be found in this video https://youtu.be/87JxlVR57Tk and the slides in the file "presentation_slides.pptx"
+
 > **Note:** If you happen to only have this README or are missing files, you can get all the required files at https://github.com/derpyasianpanda/cse163-final
 
 ## Required Libraries
