@@ -8,7 +8,7 @@ Professor: Hunter Schafer
 
 Project Mentor: Trinh Nguyen
 
-The following contents of this file will be the instructions on how to use the code written for my CSE163 Final Project about MAL users. The full report can be found within this directory named "report.pdf" or at https://docs.google.com/document/d/1524UoFh8ioQ3Oac32oNhEHeTNDgBaA2aY6HEIIyLods
+The following contents of this file will be the instructions on how to use the code written for my CSE163 Final Project about MAL users. The full report can be found within this directory named "report.pdf".
 
 My presentation on the subject can be found in this video https://youtu.be/87JxlVR57Tk and the slides in the file "presentation_slides.pptx"
 
@@ -42,7 +42,6 @@ You will need to have the following Original Data:
 ## Steps for Result Reproduction
 1. Retrieve original data. Refer to the "Required Data" and retrieve the cleaned sets from https://www.kaggle.com/azathoth42/myanimelist. Download, rename, and relocate the cleaned data in to the proper folders.
 
-    > **Note:** If you want a premade data folder without any renaming or processing, download it at https://drive.google.com/drive/folders/1-HOV_2Xe9E9mNgtxm6sE6K0pD750JebP
 2. Make sure there are the proper files and the correct folder structure
     ```
     Main Directory
